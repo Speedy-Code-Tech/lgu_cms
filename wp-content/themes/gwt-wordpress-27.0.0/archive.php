@@ -88,7 +88,7 @@ switch ($data) {
 	}
 </style>
 <div id="container-main" class="container-main" role="document">
-	<div id="main-content" class="row">
+	<div id="main-content">
 		<?php
 		if ($val == 1): ?>
 			<div class="container-fluid">
@@ -122,20 +122,24 @@ switch ($data) {
 						<?php
 					else:
 						?>
-							<div id="content" class="<?php govph_displayoptions('govph_content_position'); ?>columns" role="main">
+							<div id="content" role="main">
 							<?php
 						endif;
 							?>
 						<?php endif ?>
+
 						<?php if (have_posts()) : ?>
-							<?php /* Start the Loop */ ?>
+							<?php
+							?>
 							<?php while (have_posts()) : the_post(); ?>
 
 								<?php
+
 								/* Include the Post-Format-specific template for the content.
 							 * If you want to overload this in a child theme then include a file
 							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 							 */
+
 								get_template_part('template-parts/content', get_post_format());
 								?>
 

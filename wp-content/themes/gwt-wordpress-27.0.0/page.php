@@ -221,23 +221,14 @@ include_once('inc/banner.php');
 		/* background-color: #000000; */
 	}
 
-	.tagline {
-		font-family: "Carter One", system-ui;
-		font-weight: 400;
-		font-style: normal;
-		display: flex;
-		gap: 10px;
-		color: #FFF;
-		font-size: 30px;
-		justify-content: center;
 
-	}
-.headTitle{
+
+	.headTitle {
 		font-family: "Carter One", system-ui;
 		font-weight: 400;
 		font-style: normal;
-		font-size:30px;
-}
+	}
+
 	.comma {
 		color: #000;
 	}
@@ -254,7 +245,7 @@ include_once('inc/banner.php');
 		text-align: center;
 		text-transform: uppercase;
 		font-weight: bold;
-		background-size: fill;
+		background-size: cover;
 		/* background-position-y: 0px; */
 		display: flex;
 		align-items: center;
@@ -262,19 +253,90 @@ include_once('inc/banner.php');
 		height: 180px;
 		background-repeat: no-repeat;
 		position: relative;
+
 		/* background-color: #000000; */
 	}
 
-	.bgArticle{
+	.bgArticle {
 		background: url(<?php echo get_template_directory_uri() . '/images/lgu_icon.png' ?>);
 		background-size: 600px;
 		background-repeat: no-repeat;
 		background-position-y: 0px;
 		background-position-x: 500px;
 		opacity: 0.2;
-		width:100%;
-		height:400px;
+		width: 100%;
+		height: 400px;
 		position: absolute;
+	}
+
+	.greenLine {
+		width: 150px;
+		height: 4px;
+		background-color: #008f13;
+		border-radius: 50px;
+	}
+
+	.htitle {
+		font-size: 50px;
+	}
+
+	.tagline {
+		font-family: "Carter One", system-ui;
+		font-weight: 400;
+		font-style: normal;
+		display: flex;
+		gap: 10px;
+		color: #FFF;
+		font-size: 30px;
+		justify-content: center;
+
+	}
+
+	.qoute {
+		font-size: 1em;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.htitle {
+			font-size: 30px;
+		}
+
+		.tagline {
+			font-size: 15px;
+			gap: 2px;
+		}
+
+		.headTitle {
+			font-size: 20px;
+		}
+	}
+
+	@media only screen and (min-width: 600px) {
+		.htitle {
+			font-size: 50px;
+		}
+
+		.tagline {
+			font-size: 30px;
+		}
+
+		.headTitle {
+			font-size: 30px;
+		}
+	}
+
+	@media only screen and (min-width: 768px) {
+		.htitle {
+			font-size: 50px;
+		}
+
+		.tagline {
+			font-size: 30px;
+		}
+
+		.headTitle {
+			font-size: 50px;
+		}
 	}
 
 	/* If you uncomment individual colors, make sure to adjust hover effects */
@@ -293,33 +355,45 @@ include_once('inc/banner.php');
 		if ($val == "CONTACT US") {
 			$val = "contact";
 		}
-		if ($val == "MAYORS PROFILE"): ?>
+		if ($val == "LABO MUNICIPAL HYMN"): ?>
+
+			<div class="container-fluid p-0 px-4 d-flex justify-content-center align-items-center">
+				<iframe width="1689" height="640" src="https://www.youtube.com/embed/_GWW2aVXeCw?list=RD_GWW2aVXeCw" title="Sulong Labo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>
+			</div>
+		<?php elseif ($val == "MAYORS PROFILE"): ?>
 			<div class="container-fluid p-0">
 				<header class="mayor" style="position: relative; overflow: hidden;">
 					<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,181,24,0.7); z-index: 1;"></div>
 
-					<div class="container-fluid headline py-5 d-flex flex-column justify-content-center align-items-center" style="position: relative; z-index: 2;">
+					<div class="container-fluid headline p-0 m-0 d-flex flex-column justify-content-center align-items-center" style="position: relative; z-index: 2;">
 						<div class="container-fluid tagline">
 							<p class=" p-0 m-0 ">" </p>
-							<p class=" p-0 m-0 title">my <span class="text-dark" style="font-size:50px;">S</span>ervice. your <span class="text-dark" style="font-size:50px;">H</span>elp. our <span class="text-dark" style="font-size:50px;">F</span>uture.</p>
+							<p class=" p-0 m-0 title">my <span class="text-dark htitle">S</span>ervice. your <span class="text-dark htitle">H</span>elp. our <span class="text-dark htitle">F</span>uture.</p>
 							<p class=" p-0 m-0 "> "</p>
 							</p>
 
 						</div>
-						<p class="p-0 m-0 fs-6 text-white">- Hon. Severino H. Francisco</p>
+						<p class="p-0 m-0 text-white qoute">- Hon. Severino H. Francisco</p>
 					</div>
 				</header>
 
-				<div class="container-fluid pt-3 d-flex">
-					<div class="container w-25">
+				<div class="container-fluid pt-3 d-flex flex-column flex-sm-row">
+					<div class="container col-12 col-sm-3 pt-5 ">
 						<img src="<?php echo get_template_directory_uri() . '/images/profile.png' ?>" alt="">
 					</div>
-					<div class="container ps-5 pt-5 mt-5 w-75">
+					<div class="container ps-0 ps-sm-5 pt-0 pt-sm-5 mt-5 col-12 col-sm-8">
 						<div class="bgArticle"></div>
-						<p class="headTitle">Mayor's Corner</p>
+						<div class="d-flex flex-start flex-column pb-3">
+							<p class="headTitle p-0 m-0">Mayor's Corner</p>
+							<div class="greenLine"></div>
+						</div>
 						<article class="px-4" style="text-align:justify; border-right:#00B518 2px solid;">
 							&emsp; Labo is a first-class municipality in Camarines Norte. It is rich in culture and beautiful sceneries. It was named after the miscommunication of two languages. Labo is blessed with natural resources, rich harvest and people. As a firs-class municipality, we offer exciting adventures. Experience and reward yourself with the beautiful nature in different waterfalls. Go on a long journey and enjoy the panoramic view of the 3 mountains in Labo. Treverse in rivers and caves and visit some historical places that made a big impact in our history. Dream… Explore… Discover the beauty of our town. Again, with the warmest of hearts and the best intentions, we welcome you!
 						</article>
+						<div class="container-fluid d-flex flex-column justify-content-end pt-3">
+							<h3 class="p-0 m-0 text-end">Hon. Severino H. Francisco Jr.</h3>
+							<p class="p-0 m-0 text-end">Municipal Mayor</p>
+						</div>
 					</div>
 				</div>
 
@@ -328,7 +402,7 @@ include_once('inc/banner.php');
 			<div id="content" class="<?php govph_displayoptions('govph_content_position'); ?>columns" role="main">
 				<?php
 				while (have_posts()) : the_post();
-
+					
 					get_template_part('template-parts/content', 'page');
 
 				endwhile; //end of the loop 
@@ -453,8 +527,10 @@ include_once('inc/banner.php');
 		$val = get_the_title();
 		if ($val == "CONTACT US") {
 			$val = "contact";
+		} else if ($val == "LABO MUNICIPAL HYMN") {
+			$val = "hymn";
 		}
-		if ($val !== "contact") {
+		if ($val !== "contact" && $val !== "hymn") {
 			if (is_active_sidebar('left-sidebar')):
 				govph_displayoptions('govph_sidebar_left');
 			endif;

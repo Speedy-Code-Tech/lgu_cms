@@ -887,3 +887,6 @@
   */
  @media only screen and (min-width: 120.063em) {
  }
+.row{
+  width: 100%;
+}

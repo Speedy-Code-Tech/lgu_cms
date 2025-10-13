@@ -929,30 +929,30 @@ function govph_displayoptions( $options ){
       break;
 case 'govph_slider_start':
   if (isset($option['govph_slider_fullwidth']) && $option['govph_slider_fullwidth'] == 'true') {
-      echo '';
-  } elseif (!isset($option['govph_slider_fullwidth']) || $option['govph_slider_fullwidth'] != 'true' || is_active_sidebar('banner-section-1') || is_active_sidebar('banner-section-2')) {
       echo '<div class="row">';
+  } elseif (!isset($option['govph_slider_fullwidth']) || $option['govph_slider_fullwidth'] != 'true' || is_active_sidebar('banner-section-1') || is_active_sidebar('banner-section-2')) {
+      echo '';
   }
   break;
 case 'govph_slider_end':
   if (isset($option['govph_slider_fullwidth']) && $option['govph_slider_fullwidth'] == 'true') {
-      echo '';
+      echo '<div class="row">';
   } elseif (!isset($option['govph_slider_fullwidth']) || $option['govph_slider_fullwidth'] != 'true' || is_active_sidebar('banner-section-1') || is_active_sidebar('banner-section-2')) {
       echo '</div>';
   }
   break;
 case 'govph_banner_title_start':
   if (isset($option['govph_slider_fullwidth']) && $option['govph_slider_fullwidth'] == 'true') {
-      echo '<div class="row">';
+      echo '<div>';
   } else {
-      echo '';
+      echo '<div class="rows" style="width:100%;>';
   }
   break;
 case 'govph_banner_title_end':
   if (isset($option['govph_slider_fullwidth']) && $option['govph_slider_fullwidth'] == 'true') {
       echo '</div>';
   } else {
-      echo '';
+      echo '<div class="row2" >';
   }
   break;
 case 'govph_slider_fullwidth':

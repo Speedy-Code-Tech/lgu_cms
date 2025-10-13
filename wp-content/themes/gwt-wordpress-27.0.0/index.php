@@ -30,7 +30,7 @@ include_once('inc/banner.php');
 <?php govph_displayoptions('govph_panel_top'); ?>
 
 <div class="container-main" role="document">
-	<div id="main-content" class="row">
+	<div id="main-content" >
 		<div id="content" class="<?php govph_displayoptions('govph_content_position'); ?>columns" role="main">
 			<h1 class="border border-top-0 border-end-0 border-bottom-0 border-2 border-success ps-3">WELCOME!</h1>
 			<div class="pt-5 container-fluid d-flex flex-column flex-sm-row gap-3">

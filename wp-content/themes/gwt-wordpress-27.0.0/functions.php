@@ -117,3 +117,49 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 * Anti-Click Jacking
 */
 require get_template_directory() . '/inc/addsec.php';
+
+/**
+ * Change the default post order to oldest-to-newest (ASC)
+ * on the main archive pages.
+ */
+function custom_dynamic_category_sort( $query ) {
+    // 1. Only modify the main query on the front-end (not in admin)
+    if ( $query->is_main_query() && ! is_admin() && $query->is_category() ) {
+        
+        // 2. Define your list of barangays inside the function
+        $barangays = [
+            "Anahaw", "Anameam", "Awitan", "Baay", "Bagacay", "Bagong Silang I", 
+            "Bagong Silang II", "Bagong Silang III", "Bakiad", "Bautista", "Bayabas", 
+            "Bayan-bayan", "Benit", "Bulhao", "Cabatuhan", "Cabusay", "Calabasa", 
+            "Canapawan", "Daguit", "Dalas", "Dumagmang", "Exciban", "Fundado", 
+            "Guinacutan", "Guisican", "Gumamela", "Iberica", "Kalamunding", "Lugui", 
+            "Mabilo I", "Mabilo II", "Macogon", "Mahawan-hawan", "Malangcao-Basud", 
+            "Malasugui", "Malatap", "Malaya", "Malibago", "Maot", "Masalong", 
+            "Matanlang", "Napaod", "Pag-Asa", "Pangpang", "Pinya", "San Antonio", 
+            "San Francisco", "Santa Cruz", "Submakin", "Talobatib", "Tigbinan", 
+            "Tulay Na Lupa"
+        ];
+        
+        // 3. Get the title/name of the current category (term)
+        // We use get_queried_object() which is the most reliable method here
+        $queried_object = get_queried_object();
+        $current_category_name = '';
+
+        if ( $queried_object && property_exists( $queried_object, 'name' ) ) {
+            $current_category_name = trim( $queried_object->name );
+        }
+
+        // 4. Check if the current category name is in the barangays list
+        if ( in_array( $current_category_name, $barangays, true ) ) {
+            // If it IS a barangay category, set the order to DESC (Newest to Oldest)
+            $query->set( 'order', 'ASC' ); 
+        } else {
+            // If it is NOT a barangay category, set the order to ASC (Oldest to Newest)
+            $query->set( 'order', 'DESC' );
+        }
+        
+        // Always order by date
+        $query->set( 'orderby', 'date' );
+    }
+}
+add_action( 'pre_get_posts', 'custom_dynamic_category_sort' );

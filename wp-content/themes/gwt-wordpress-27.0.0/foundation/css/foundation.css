@@ -2825,9 +2825,11 @@ table.hover tr:nth-of-type(even):hover {
     bottom: 0; }
 
 .row {
-  max-width: 80rem;
+  /* max-width: 80rem;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto; */
+
+}
   .row::before, .row::after {
     content: ' ';
     display: table; }

@@ -1,4 +1,10 @@
 <?php
+
+// if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+//    $_SERVER['HTTPS']='on';
+
+define( 'WP_HOME', 'http://localhost/LGU/' );
+define( 'WP_SITEURL', 'http://localhost/LGU/' );
 /**
  * The base configuration for WordPress
  *

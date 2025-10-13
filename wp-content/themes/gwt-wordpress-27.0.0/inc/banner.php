@@ -58,8 +58,23 @@
 		height: 150px;
 
 	}
+	.hymn,.myHead{
+		background: url(<?php echo get_template_directory_uri() . '/images/hymn.jpg' ?>);
+		color: #fff;
+		width: 100%;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+		background-size: cover;
+		display: flex;
+		/* background-position-y: -15px; */
+		align-items: center;
+		justify-content: center;
+		height: 150px;
+
+	}
 	.mayorsprofile {
-	display: none;
+		display: none;
 	}
 
 	@media only screen and (max-width: 600px) {
@@ -77,6 +92,9 @@
 	@media only screen and (min-width: 768px) {
 		.news {
 			background-size: fill;
+		}
+		.hymn,.myHead{
+			background-position-y: -15px;
 		}
 	}
 </style>
@@ -108,6 +126,7 @@ if (!is_home()) {
 	$container_class = 'banner-pads';
 }
 ?>
+
 <!-- banner -->
 <div class="container-banner <?php echo $container_class; ?>">
 	<?php govph_displayoptions('govph_slider_start'); ?>
@@ -155,8 +174,9 @@ if (!is_home()) {
 					</div>
 					<?php govph_displayoptions('govph_banner_title_end'); ?>
 				<?php elseif (is_archive()): ?>
+					
 					<?php govph_displayoptions('govph_banner_title_start'); ?>
-					<div class="large-9 columns container-main p-0" style="width:100vw;">
+					<div class="large-9 columns container-main container-fluid p-0" style="width:100%;">
 						<?php
 						$val = "";
 						$titles = single_cat_title('', false);
@@ -251,9 +271,13 @@ if (!is_home()) {
 						}else if(get_the_title() =="MAYORS PROFILE"){
 							$val = "mayorsprofile";
 						}
+						else if (get_the_title() == "LABO MUNICIPAL HYMN") {
+							$val = "hymn";
+						}
 						else if (get_the_title() !== "NEWS") {
 							$val = "news";
 						}
+						
 						if (is_page()):
 							
 						?>
@@ -267,7 +291,10 @@ if (!is_home()) {
 									$cat_name = !empty($categories) ? $categories[0]->name : '';
 									if ($cat_name == ''):
 										$cat_name = get_the_title();
-										echo esc_html(get_the_title());
+										if($cat_name=="LABO MUNICIPAL HYMN")
+											echo "LABO HYMN";
+										else
+											echo esc_html(get_the_title());
 									endif;
 									?>
 									<?php while (have_posts()) : the_post(); ?>
@@ -287,7 +314,7 @@ if (!is_home()) {
 				</div>
 
 				<div id="auxiliary" class="show-for-large">
-					<div class="row">
+					<div>
 						<div class="small-12 large-12 columns toplayer">
 							<nav id="aux-main" class="nomargin show-for-medium-up" data-dropdown-content>
 								<ul class="dropdown menu" data-dropdown-menu>
