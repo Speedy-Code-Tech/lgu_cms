@@ -130,7 +130,6 @@ if (!is_home()) {
 <!-- banner -->
 <div class="container-banner <?php echo $container_class; ?>">
 	<?php govph_displayoptions('govph_slider_start'); ?>
-
 	<?php if (is_home()): ?>
 		<?php if ($banner_slider = efs_get_slider()): ?>
 			<?php if (govph_displayoptions('govph_slider_full') == 'active'): ?>

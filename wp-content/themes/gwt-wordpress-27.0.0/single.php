@@ -13,13 +13,13 @@ include_once('inc/banner.php');
 ?>
 <?php govph_displayoptions('govph_panel_top'); ?>
 <style>
-	iframe{
+	iframe {
 		width: 100%;
 	}
 </style>
-<div id="main-content" class="container-main" role="document">
+<div id="main-content" class="container-main jes" role="document">
+	<div class="mainBg1"></div>
 	<div class="row">
-
 		<?php
 		$dat = single_cat_title('', false);
 
@@ -48,6 +48,7 @@ include_once('inc/banner.php');
 					<?php
 						get_template_part('template-parts/content', 'single');
 					else: ?>
+
 						<div class="container-fluid d-flex flex-column flex-md-row gap-5">
 							<div class="flex-shrink-0">
 								<?php if (get_the_post_thumbnail_url()) { ?>
@@ -60,6 +61,26 @@ include_once('inc/banner.php');
 									<h2 class="p-0 m-0" style="color:#00B518; font-weight: bold; font-size:2em;"><?= the_title(); ?></h2>
 									<div class="lines mt-2" style="width:150px; height:4px; background:#4956FF; border-radius: 20px;"></div>
 								</div>
+
+								<?php if (is_numeric(get_the_title())) { ?>
+									<style>
+										.wp-block-file>a {
+											font-size: 20px;
+											padding-left: 20px;
+											;
+											/* color: #373737; */
+										}
+
+										.wp-block-file>a:hover {
+											color: #00B518;
+											font-weight: bold;
+										}
+
+										.wp-block-file>a::before {
+											content: " - ";
+										}
+									</style>
+								<?php } ?>
 								<div class="container-fluid pe-3" style="text-align:justify; border-right: #00B518 2px solid;">
 									<?php
 									get_template_part('template-parts/content', 'single');

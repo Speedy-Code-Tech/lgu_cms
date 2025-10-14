@@ -1,0 +1,4 @@
+<div class="container-fluid ms-2 ps-3 me-5 fs-4 pb-5" style="text-align: justify; border-left:5px solid #00B518;">
+Welcome to our <strong>Official Downloadable Forms Archive for the Local Government Unit of Labo</strong>. This essential resource provides convenient and centralized access to all necessary forms for official transactions, permits, requests, and applications. Designed to streamline your process, this archive allows citizens and stakeholders to easily search, view, and print the required documents from home. Use the categories and filters below to quickly locate the specific form you need, ensuring a faster and more efficient transaction with our various departments.
+</div>
+<h1 class="ps-3 pt-5 pb-5" style="font-size: 30px;">LIST OF AVAILABLE FORMS</h1>

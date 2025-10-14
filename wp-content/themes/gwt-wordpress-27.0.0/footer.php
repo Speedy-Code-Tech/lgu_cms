@@ -54,6 +54,8 @@ is_active_sidebar('footer-4')): ?>
 </div><!-- #off-canvass-content -->
 </div><!-- #off-canvass-wrapper inner -->
 </div><!-- #off-canvass-wrapper -->
+<!-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<script src="//cdn.datatables.net/2.3.4/js/dataTables.min.js"></script> -->
 
 <!-- standard footer script -->
 <script type="text/javascript">
@@ -83,7 +85,6 @@ var gwtpstReady = function(){
 <!-- end philippine standard time -->
 
 <?php wp_footer(); ?>
-
 <div><a href="#page" id="back-to-top" style="display: inline;"><i class="fa fa-arrow-circle-up fa-2x"></i></a></div>
 </body>
 </html>
