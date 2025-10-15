@@ -460,16 +460,14 @@ switch ($data) {
 							?>
 							<?php
 							}
-							if($dat == "DEPARTMENT AND OFFICES"){
+							if ($dat == "DEPARTMENT AND OFFICES") {
 								require(get_template_directory() . "/template-parts/custom/department.php");
-								
 							}
 							if ($dat == "MEMORANDUM ORDER" || $dat == "EXECUTIVE ORDER") {
-								if($dat == "MEMORANDUM ORDER"){
-								require(get_template_directory() . "/template-parts/custom/memo-banner.php");
-								}else if($dat == "EXECUTIVE ORDER"){
-								require(get_template_directory() . "/template-parts/custom/executive-banner.php");
-
+								if ($dat == "MEMORANDUM ORDER") {
+									require(get_template_directory() . "/template-parts/custom/memo-banner.php");
+								} else if ($dat == "EXECUTIVE ORDER") {
+									require(get_template_directory() . "/template-parts/custom/executive-banner.php");
 								}
 							?>
 								<div class="container-fluid d-flex flex-column flex-md-row gap-3">
@@ -509,6 +507,40 @@ switch ($data) {
 											}
 										</style>
 									<?php }
+									if ($dat == "ECONOMIC DEVELOPMENT" || $dat == "FISCAL MANAGEMENT" || $dat == "INFRASTRUCTURE"  || $dat == "PUBLIC ADMINISTRATION" || $dat == "SOCIAL SERVICES") { ?>
+										<style>
+											#content {
+												display: flex;
+												flex-direction: row;
+												gap:15px;
+												justify-content: center;
+												align-items: center;
+												padding: 0 20px;
+											}
+
+											.post-box.container-fluid {
+												width: 350px;
+											}
+
+											@media only screen and (max-width: 600px) {
+												#content {
+													flex-direction: column;
+												}
+											}
+
+											@media only screen and (min-width: 600px) {
+												#content {
+													flex-wrap: wrap;
+												}
+											}
+												@media only screen and (min-width: 768px) {
+													#content {
+
+													flex-direction: row;
+												}
+												}
+										</style>
+									<?php	}
 									while (have_posts()) : the_post(); ?>
 										<?php get_template_part('template-parts/content', get_post_format()); ?>
 									<?php endwhile; ?>

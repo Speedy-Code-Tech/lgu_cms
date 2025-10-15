@@ -398,9 +398,23 @@ include_once('inc/banner.php');
 				</div>
 
 			</div>
-		<?php elseif ($val !== "contact") : ?>
+		<?php elseif ($val !== "contact") : 
+			if($val =="MUNICIPAL OFFICIAL AND DEPARTMENT HEAD" || $val =="LEGISLATIVE"){?>
+			<style>
+				.bgko{
+					background: url(<?= get_template_directory_uri().'/images/officer.jpg'?>);
+					background-size: cover;
+				}
+			</style>
+				<div id="content" class="container-fluid px-5 bgko" role="main">
+
+			<?php } else{
+			?>
 			<div id="content" class="<?php govph_displayoptions('govph_content_position'); ?>columns" role="main">
+			
+			
 				<?php
+			}
 				while (have_posts()) : the_post();
 					
 					get_template_part('template-parts/content', 'page');
@@ -530,7 +544,8 @@ include_once('inc/banner.php');
 		} else if ($val == "LABO MUNICIPAL HYMN") {
 			$val = "hymn";
 		}
-		if ($val !== "contact" && $val !== "hymn") {
+		
+		if ($val !== "contact" && $val !== "hymn" && $val !="MUNICIPAL OFFICIAL AND DEPARTMENT HEAD" && $val !="LEGISLATIVE") {
 			if (is_active_sidebar('left-sidebar')):
 				govph_displayoptions('govph_sidebar_left');
 			endif;

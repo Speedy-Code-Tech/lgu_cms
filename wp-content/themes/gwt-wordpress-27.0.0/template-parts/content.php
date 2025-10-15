@@ -75,8 +75,10 @@
 	?>
 
 		<?php else:
-		
-		if ($dat == "MEMORANDUM ORDER" || $dat == "EXECUTIVE ORDER"):
+		if($dat=="ECONOMIC DEVELOPMENT" || $dat=="FISCAL MANAGEMENT" || $dat=="INFRASTRUCTURE"  || $dat=="PUBLIC ADMINISTRATION" || $dat=="SOCIAL SERVICES"):
+			require(get_template_directory() . '/template-parts/custom/department_post.php');
+			
+		elseif ($dat == "MEMORANDUM ORDER" || $dat == "EXECUTIVE ORDER"):
 			require(get_template_directory() . '/template-parts/custom/memorandum.php');
 		?>
 

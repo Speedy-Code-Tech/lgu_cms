@@ -35,6 +35,9 @@ include_once('inc/banner.php');
 	<div id="main-content" >
 		<div id="content" class="<?php govph_displayoptions('govph_content_position'); ?>columns" role="main">
 			<h1 class="border border-top-0 border-end-0 border-bottom-0 border-2 border-success ps-3">WELCOME!</h1>
+			<div class="container-fluid">
+				<video class="img-fluid rounded pt-3" src="<?= get_template_directory_uri().'/images/video.mp4'?>" autoplay muted> </video>
+			</div>
 			<div class="pt-5 container-fluid d-flex flex-column flex-sm-row gap-3">
 
 				<div class="container-fluid bg-white shadow-lg rounded-4 p-3 p-md-5 mx-auto">
@@ -65,6 +68,7 @@ include_once('inc/banner.php');
 				</div>
 
 			</div>
+			
 		</div><!-- end content -->
 
 		<?php
