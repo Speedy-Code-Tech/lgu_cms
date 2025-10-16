@@ -352,6 +352,7 @@ include_once('inc/banner.php');
 <div id="main-content" class="container-main p-0 pb-5" role="document">
 	<div>
 		<?php $val = get_the_title();
+		
 		if ($val == "CONTACT US") {
 			$val = "contact";
 		}
@@ -399,6 +400,7 @@ include_once('inc/banner.php');
 
 			</div>
 		<?php elseif ($val !== "contact") : 
+
 			if($val =="MUNICIPAL OFFICIAL AND DEPARTMENT HEAD" || $val =="LEGISLATIVE"){?>
 			<style>
 				.bgko{
@@ -423,6 +425,7 @@ include_once('inc/banner.php');
 				?>
 			</div><!-- end content -->
 		<?php else : ?>
+		
 			<div id="content" class="container-fluid px-3 d-flex flex-column flex-md-row" role="main">
 				<div class="container ">
 					<div class="container">

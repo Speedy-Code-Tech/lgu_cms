@@ -69,6 +69,28 @@
 		color: #00B518;	
 
 	}
+	#block-13{
+		padding-top: 0;
+		margin-top: 0;
+	}
+	#block-13 .wp-block-latest-posts__list li{
+		border-bottom: #00B518 1px solid;
+		padding: 10px 0;
+			transition: 1s;
+	}
+	#block-13 .wp-block-latest-posts__list li a:hover{
+		color: #00B518;
+		font-weight: bold;
+	
+	}
+	#block-13 .wp-block-latest-posts__list li a{
+		color:#373737;
+					transition: cubic-bezier(0.86, 0, 0.07, 1);
+
+	}
+	#block-13 .wp-block-latest-posts__list li a:before{
+		content: "- ";
+	}
 </style>
 <?php if (is_active_sidebar('left-sidebar')) : 
 	if(get_the_title() !="MAYORS PROFILE"):

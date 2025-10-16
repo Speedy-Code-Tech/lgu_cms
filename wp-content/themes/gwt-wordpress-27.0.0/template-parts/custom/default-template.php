@@ -1,3 +1,32 @@
+<style>
+    #post-<?php the_ID(); ?>{
+        display: flex;
+    }
+    
+     @media only screen and (max-width: 600px) {
+		#post-<?php the_ID(); ?>{
+            flex-direction: column;
+        }
+      
+	}
+
+	@media only screen and (min-width: 600px) {
+		#post-<?php the_ID(); ?>{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+     
+	}
+
+	@media only screen and (min-width: 768px) {
+		 #post-<?php the_ID(); ?>{
+            flex-direction: row;
+        }
+     
+	}
+</style>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class('callout secondary'); ?>>
     <?php
     $content_class = 'large-12';

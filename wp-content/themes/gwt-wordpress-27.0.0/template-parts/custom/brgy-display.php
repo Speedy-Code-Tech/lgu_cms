@@ -1,5 +1,64 @@
-	<?php if (in_array(trim(get_the_title()), $barangays, true)): ?>
-		<div class="container-fluid d-flex flex-column flex-sm-row gap-3">
+	<?php 
+	$barangay1 = [
+				"anahaw",
+				"anameam",
+				"awitan",
+				"baay",
+				"bagacay",
+				"bagong silang i",
+				"bagong silang ii",
+				"bagong silang iii",
+				"bakiad",
+				"bautista",
+				"bayabas",
+				"bayan-bayan",
+				"benit",
+				"bulhao",
+				"cabatuhan",
+				"cabusay",
+				"calabasa",
+				"canapawan",
+				"daguit",
+				"dalas",
+				"dumagmang",
+				"exciban",
+				"fundado",
+				"guinacutan",
+				"guisican",
+				"gumamela",
+				"iberica",
+				"kalamunding",
+				"lugui",
+				"mabilo i",
+				"mabilo ii",
+				"macogon",
+				"mahawan-hawan",
+				"malangcao-basud",
+				"malasugui",
+				"malatap",
+				"malaya",
+				"malibago",
+				"maot",
+				"masalong",
+				"matanlang",
+				"napaod",
+				"pag-asa",
+				"pangpang",
+				"pinya",
+				"san antonio",
+				"san francisco",
+				"santa cruz",
+				"submakin",
+				"talobatib",
+				"tigbinan",
+				"tulay na lupa"
+			];
+	
+			
+	?>	
+
+	<?php if (in_array(trim(strtolower(get_the_title())), $barangay1, true)): ?>
+		<div class="container-fluid d-flex flex-column flex-sm-row-reverse gap-3">
 			<div class="col12 col-sm-4">
 				<?php
 				if (has_post_thumbnail()) :
@@ -19,7 +78,7 @@
 		<h2 class="pb-0 mb-2" style="color:#00B518;">Available Tourist Spots and Activity</h2>
 		<div style="width: 350px; background:#007bff;  height:4px; border-radius: 30px;"></div>
 	<?php endif; ?>
-	<?php if (!in_array(trim(get_the_title()), $barangays, true)): ?>
+	<?php if (!in_array(trim(strtolower(get_the_title())), $barangay1, true)): ?>
 		<div class="container-fluid d-flex flex-column">
 			<div class="flex-column flex-sm-row" style="display: flex; align-items: flex-start; gap: 20px; padding: 20px;">
 				<div style="flex-shrink: 0;">

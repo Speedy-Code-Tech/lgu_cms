@@ -208,13 +208,14 @@ if (!is_home()) {
 									if (is_category()) :
 
 										$dat = single_cat_title('', false);
-
+										
+										
 										if ($dat == "HOME") {
-											echo "<script>location.href = '/LGU';</script>";
+									
+											echo "<script>location.href = '/lgu_cms';</script>";
 										} else if (str_word_count($dat) <= 2) {
 											echo $dat;
-										} else {
-
+										} else{
 											echo $dat;
 										}
 

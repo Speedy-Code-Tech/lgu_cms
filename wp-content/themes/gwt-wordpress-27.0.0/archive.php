@@ -424,24 +424,18 @@ switch ($data) {
 		endif;
 		if ($dat == "NEWS"): ?>
 			<div id="content" class="container-fluid columns" role="main">
-
 			<?php else: ?>
-
-				<?php if ($val == 1):
-				?>
-
+				<?php if ($val == 1): ?>
 					<?php if ($title == "ACCOMODATIONS"): ?>
 						<div class="d-flex">
-						<?php else:
-
-						?>
+						<?php else: ?>
 							<div class="d-flex flex-column">
 							<?php endif; ?>
 						<?php else: ?>
-							<?php
-
-							if (strtolower($target) == strtolower($target_no_punc)):
-							?>
+							<?php if ($dat == "FACTS AND FIGURES") {
+								require(get_template_directory() . '/template-parts/custom/fact-figures.php');
+							}
+							if (strtolower($target) == strtolower($target_no_punc)): ?>
 								<!-- DISPLAY CITIZENZ CHARTER INFO -->
 								<?php require(get_template_directory() . "/template-parts/custom/citizens-banner.php"); ?>
 								<div id="content" class="d-flex flex-wrap gap-3 justify-content-center align-items-center" role="main">
@@ -476,6 +470,7 @@ switch ($data) {
 								}
 
 								if (have_posts()) :
+
 									if ($dat == "MEMORANDUM ORDER" || $dat == "EXECUTIVE ORDER") {
 									?>
 
@@ -512,7 +507,7 @@ switch ($data) {
 											#content {
 												display: flex;
 												flex-direction: row;
-												gap:15px;
+												gap: 15px;
 												justify-content: center;
 												align-items: center;
 												padding: 0 20px;
@@ -533,17 +528,79 @@ switch ($data) {
 													flex-wrap: wrap;
 												}
 											}
-												@media only screen and (min-width: 768px) {
-													#content {
+
+											@media only screen and (min-width: 768px) {
+												#content {
 
 													flex-direction: row;
 												}
-												}
+											}
 										</style>
-									<?php	}
-									while (have_posts()) : the_post(); ?>
-										<?php get_template_part('template-parts/content', get_post_format()); ?>
-									<?php endwhile; ?>
+										<?php	}
+									if ($dat != "MEMORANDUM ORDER" && $dat != "EXECUTIVE ORDER") {
+										while (have_posts()) : the_post(); ?>
+
+											<?php get_template_part('template-parts/content', get_post_format()); ?>
+										<?php endwhile;
+									} else {  ?>
+										<div class="pt-5 container-fluid">
+											<h2 class="border border-top-0 border-end-0 border-bottom-0 border-2 border-success ps-3 mb-4">Executive Order Archive</h2>
+
+											<div class="row g-4">
+												<?php
+												// 👇 GET ALL SUBCATEGORIES OF "executive-order" ONLY!
+												$parent_cat = "";
+												$slug = "";
+												if ($dat == "MEMORANDUM ORDER")
+													$slug = "memorandum-order";
+												else
+													$slug = "executive-order";
+
+											
+												$parent_cat = get_category_by_slug($slug);
+												if (!$parent_cat) {
+													echo '<div class="col-12"><p class="text-center text-danger">Parent category "executive-order" not found!</p></div>';
+												} else {
+													$subcategories = get_categories(array(
+														'child_of' => $parent_cat->term_id,
+														'hide_empty' => 0, // Show even if no posts
+														'orderby' => 'name',
+														'order' => 'DESC'
+													));
+
+													if ($subcategories) :
+														foreach ($subcategories as $subcat) :
+												?>
+															<div class="col-md-6 col-lg-4">
+																<div class="card h-100 shadow-sm border-0 bg-white rounded-4 overflow-hidden text-center p-4">
+																	<div class="card-body d-flex flex-column justify-content-center">
+																		<h3 class="card-title fw-bold text-success mb-3 fs-1"><?= $subcat->name ?></h3>
+																		<p class="text-secondary mb-4">
+																			<?= $subcat->description ?: $subcat->count . ' Executive Order' . ($subcat->count != 1 ? 's' : '') ?>
+																		</p>
+																		<a href="<?= get_category_link($subcat->term_id) ?>"
+																			class="btn btn-success btn-lg w-100">
+																			View <?= $subcat->name ?> <i class="fas fa-arrow-right ms-2"></i>
+																		</a>
+																	</div>
+																</div>
+															</div>
+														<?php
+														endforeach;
+													else :
+														?>
+														<div class="col-12">
+															<p class="text-center text-muted">No executive order years available.</p>
+															<!-- DEBUG INFO -->
+															<p class="text-center text-warning">Debug: No subcategories found under <?= $parent_cat->name ?> (ID: <?= $parent_cat->term_id ?>).</p>
+														</div>
+												<?php
+													endif;
+												}
+												?>
+											</div>
+										</div>
+									<?php } ?>
 
 									<?php gwt_wp_content_nav('nav-below'); ?>
 								<?php else : ?>
@@ -555,11 +612,14 @@ switch ($data) {
 								</div>
 							<?php } ?>
 									</div><!-- #content -->
+
 									<?php
+
 									if (is_category()) :
 										$dat = single_cat_title('', false);
 										if ($dat == "HOME") :
 									?>
+
 											<?php
 											if (is_active_sidebar('left-sidebar')) {
 												govph_displayoptions('govph_sidebar_left');

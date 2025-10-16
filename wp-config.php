@@ -3,8 +3,9 @@
 // if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
 //    $_SERVER['HTTPS']='on';
 
-define( 'WP_HOME', 'http://localhost/LGU/' );
-define( 'WP_SITEURL', 'http://localhost/LGU/' );
+define( 'WP_HOME', 'http://192.168.1.21/lgu_cms/' );
+define( 'WP_SITEURL', 'http://192.168.1.21/lgu_cms/' );
+define( 'WP_INDEX', 'lgu_cms/' );
 /**
  * The base configuration for WordPress
  *

@@ -35,7 +35,16 @@ include_once('inc/banner.php');
 					$cat_name = !empty($categories) ? $categories[0]->name : '';
 					if ($cat_name == 'NEWS'):
 				?>
-						<div class="container-fluid d-flex flex-column justify-content-center align-items-center mb-4">
+						<style>
+							#post-<?php the_ID(); ?> {
+								padding: 0 20px;
+							}
+							#post-<?php the_ID(); ?> .entry-content p{
+								text-align: justify;
+							}
+						</style>
+					
+						<div id="#post-<?php the_ID(); ?>" class="container-fluid d-flex flex-column justify-content-center align-items-center mb-4">
 							<?php if (get_the_post_thumbnail_url()) { ?>
 								<img src="<?php echo get_the_post_thumbnail_url(); ?>" class="rounded" style="width: 500px;" alt="<?php the_title_attribute(); ?>">
 
