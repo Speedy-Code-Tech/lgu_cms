@@ -255,7 +255,7 @@ include_once('inc/banner.php');
 					else :
 						?>
 						<div class="col-12">
-							<p class="text-center text-muted">No disclosure posts found.</p>
+							<p class="text-center text-muted">No News posts found.</p>
 						</div>
 					<?php endif; ?>
 				</div>
@@ -267,7 +267,7 @@ include_once('inc/banner.php');
 
 			<!-- ADD THIS ENTIRE BLOCK HERE -->
 			<div class="pt-5 container-fluid">
-				<h2 class="border border-top-0 border-end-0 border-bottom-0 border-2 border-success ps-3 mb-4">NEWS & ANNOUNCEMENTS</h2>
+				<h2 class="border border-top-0 border-end-0 border-bottom-0 border-2 border-success ps-3 mb-4">TOURISM & ACTIVITY</h2>
 
 				<div class="row g-4">
 					<?php
@@ -311,7 +311,7 @@ include_once('inc/banner.php');
 					else :
 						?>
 						<div class="col-12">
-							<p class="text-center text-muted">No disclosure posts found.</p>
+							<p class="text-center text-muted">No Tourism found.</p>
 						</div>
 					<?php endif; ?>
 				</div>

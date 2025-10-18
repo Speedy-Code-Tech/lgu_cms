@@ -352,14 +352,14 @@ include_once('inc/banner.php');
 <div id="main-content" class="container-main p-0 pb-5" role="document">
 	<div>
 		<?php $val = get_the_title();
-		
+
 		if ($val == "CONTACT US") {
 			$val = "contact";
 		}
 		if ($val == "LABO MUNICIPAL HYMN"): ?>
 
 			<div class="container-fluid p-0 px-4 d-flex justify-content-center align-items-center">
-				<iframe width="1689" height="640" src="https://www.youtube.com/embed/_GWW2aVXeCw?list=RD_GWW2aVXeCw" title="Sulong Labo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>
+				<iframe width="1689" height="640" src="https://www.youtube.com/embed/_GWW2aVXeCw?list=RD_GWW2aVXeCw" title="Sulong Labo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</div>
 		<?php elseif ($val == "MAYORS PROFILE"): ?>
 			<div class="container-fluid p-0">
@@ -399,168 +399,115 @@ include_once('inc/banner.php');
 				</div>
 
 			</div>
-		<?php elseif ($val !== "contact") : 
+			<?php elseif ($val !== "contact") :
 
-			if($val =="MUNICIPAL OFFICIAL AND DEPARTMENT HEAD" || $val =="LEGISLATIVE"){?>
-			<style>
-				.bgko{
-					background: url(<?= get_template_directory_uri().'/images/officer.jpg'?>);
-					background-size: cover;
-				}
-			</style>
+			if ($val == "MUNICIPAL OFFICIAL AND DEPARTMENT HEAD" || $val == "LEGISLATIVE") { ?>
+				<style>
+					.bgko {
+						background: url(<?= get_template_directory_uri() . '/images/officer.jpg' ?>);
+						background-size: cover;
+					}
+				</style>
 				<div id="content" class="container-fluid px-5 bgko" role="main">
 
-			<?php } else{
-			?>
-			<div id="content" class="<?php govph_displayoptions('govph_content_position'); ?>columns" role="main">
-			
-			
-				<?php
-			}
+				<?php } else {
+				?>
+					<div id="content" class="<?php govph_displayoptions('govph_content_position'); ?>columns" role="main">
+
+
+					<?php
+				}
 				while (have_posts()) : the_post();
-					
+
 					get_template_part('template-parts/content', 'page');
 
 				endwhile; //end of the loop 
-				?>
-			</div><!-- end content -->
-		<?php else : ?>
-		
-			<div id="content" class="container-fluid px-3 d-flex flex-column flex-md-row" role="main">
-				<div class="container ">
-					<div class="container">
-						<div class="contact-form-header">
-							<h1>CONTACT FORM</h1>
-							<div class="divider">
-								<span class="divider-icon">i</span>
+					?>
+					</div><!-- end content -->
+				<?php else : ?>
+
+					<div id="content" class="container-fluid px-3 d-flex flex-column flex-md-row" role="main">
+						<div class="container ">
+							<div class="container">
+								<div class="contact-form-header">
+									<h1>CONTACT FORM</h1>
+									<div class="divider">
+										<span class="divider-icon">i</span>
+									</div>
+								</div>
+							</div>
+							<div id="one">
+								<?php
+								while (have_posts()) : the_post();
+
+									get_template_part('template-parts/content', 'page');
+
+								endwhile; //end of the loop 
+								?>
 							</div>
 						</div>
-					</div>
-					<div id="one">
-						<?php
-						while (have_posts()) : the_post();
+						<div class="container">
+							<div class="container ms-0 ms-md-5 px-0 px-md-5">
+								<div class="contact-form-header ps-0">
+									<h1>SOCIALS</h1>
+									<div class="divider">
+										<span class="divider-icon"><i class="bi bi-globe2"></i></span>
+									</div>
+									<div class="social-buttons-container">
+										<a href="https://facebook.com" target="_blank" class="social-button facebook">
+											<i class="fab fa-facebook-f"></i>
+										</a>
+										<a href="https://twitter.com" target="_blank" class="social-button twitter">
+											<i class="fab fa-twitter"></i>
+										</a>
+										<a href="https://instagram.com" target="_blank" class="social-button instagram">
+											<i class="fab fa-instagram"></i>
+										</a>
+										<a href="https://tiktok.com" target="_blank" class="social-button tiktok">
+											<i class="fab fa-tiktok"></i>
+										</a>
+									</div>
+								</div>
+								<hr>
+								<div class="contact-form-header">
+									<h1>EMERGENCY</h1>
+									<div class="divider">
+										<span class="divider-icon"><i class="bi bi-telephone-fill"></i></span>
+									</div>
+								</div>
+								<?php require(get_template_directory() . '/template-parts/custom/contact.php');
+								?>
 
-							get_template_part('template-parts/content', 'page');
 
-						endwhile; //end of the loop 
-						?>
-					</div>
-				</div>
-				<div class="container">
-					<div class="container ms-0 ms-md-5 px-0 px-md-5">
-						<div class="contact-form-header ps-0">
-							<h1>SOCIALS</h1>
-							<div class="divider">
-								<span class="divider-icon"><i class="bi bi-globe2"></i></span>
 							</div>
-							<div class="social-buttons-container">
-								<a href="https://facebook.com" target="_blank" class="social-button facebook">
-									<i class="fab fa-facebook-f"></i>
-								</a>
-								<a href="https://twitter.com" target="_blank" class="social-button twitter">
-									<i class="fab fa-twitter"></i>
-								</a>
-								<a href="https://instagram.com" target="_blank" class="social-button instagram">
-									<i class="fab fa-instagram"></i>
-								</a>
-								<a href="https://tiktok.com" target="_blank" class="social-button tiktok">
-									<i class="fab fa-tiktok"></i>
-								</a>
-							</div>
+
 						</div>
-						<hr>
-						<div class="contact-form-header">
-							<h1>EMERGENCY</h1>
-							<div class="divider">
-								<span class="divider-icon"><i class="bi bi-telephone-fill"></i></span>
-							</div>
-						</div>
-						<ul class="d-flex flex-column gap-3">
-							<li class="d-flex align-items-center mb-2">
-								<img src="<?php echo get_template_directory_uri() . '/images/lgu_icon.png' ?>" style="width: 60px;" alt="" />
-								<ul style="font-size: 18px; font-weight: bold; list-style-type: none; padding-left: 0;">
-									<h3 class="p-0 m-0" style="color:#00B518;">Labo Camarines Norte</h3>
-									<li class="ps-3">Smart: (054) 501-0025</li>
-									<li class="ps-3">Globe: (054) 501-0030</li>
-
-								</ul>
-
-							</li>
-							<li class="d-flex align-items-center mb-2">
-								<img src="<?php echo get_template_directory_uri() . '/images/mddrm.png' ?>" style="width: 60px;" alt="" />
-								<ul style="font-size: 18px; font-weight: bold; list-style-type: none; padding-left: 0;">
-									<h3 class="p-0 m-0" style="color:#00B518;">Municipal Disaster Risk Reduction and Management</h3>
-									<li class="ps-3">Smart: (054) 501-0025</li>
-									<li class="ps-3">Globe: (054) 501-0030</li>
-
-
-								</ul>
-
-							</li>
-							<li class="d-flex align-items-center mb-2">
-								<img src="<?php echo get_template_directory_uri() . '/images/ldh.png' ?>" style="width: 60px;" alt="" />
-								<ul style="font-size: 18px; font-weight: bold; list-style-type: none; padding-left: 0;">
-									<h3 class="p-0 m-0" style="color:#00B518;">Labo District Hospital</h3>
-									<li class="ps-3">Smart: (054) 501-0025</li>
-									<li class="ps-3">Globe: (054) 501-0030</li>
-
-
-								</ul>
-
-							</li>
-							<li class="d-flex align-items-center mb-2">
-								<img src="<?php echo get_template_directory_uri() . '/images/pnp.png' ?>" style="width: 60px;" alt="" />
-								<ul style="font-size: 18px; font-weight: bold; list-style-type: none; padding-left: 0;">
-									<h3 class="p-0 m-0" style="color:#00B518;">Labo Municipal Police Station</h3>
-									<li class="ps-3">Smart: (054) 501-0025</li>
-									<li class="ps-3">Globe: (054) 501-0030</li>
-
-
-								</ul>
-
-							</li>
-							<li class="d-flex align-items-center mb-2">
-								<img src="<?php echo get_template_directory_uri() . '/images/bfp.png' ?>" style="width: 60px;" alt="" />
-								<ul style="font-size: 18px; font-weight: bold; list-style-type: none; padding-left: 0;">
-									<h3 class="p-0 m-0" style="color:#00B518;">Bureau of Fire Protection</h3>
-									<li class="ps-3">Smart: (054) 501-0025</li>
-									<li class="ps-3">Globe: (054) 501-0030</li>
-
-								</ul>
-
-							</li>
-						</ul>
-
-
-					</div>
-
-				</div>
-			</div><!-- end 
+					</div><!-- end 
 			content -->
-		<?php endif; ?>
+				<?php endif; ?>
 
 
-		<?php
-		$val = get_the_title();
-		if ($val == "CONTACT US") {
-			$val = "contact";
-		} else if ($val == "LABO MUNICIPAL HYMN") {
-			$val = "hymn";
-		}
-		
-		if ($val !== "contact" && $val !== "hymn" && $val !="MUNICIPAL OFFICIAL AND DEPARTMENT HEAD" && $val !="LEGISLATIVE") {
-			if (is_active_sidebar('left-sidebar')):
-				govph_displayoptions('govph_sidebar_left');
-			endif;
-		}
-		?>
-		<?php
-		if (is_active_sidebar('right-sidebar')):
-			govph_displayoptions('govph_sidebar_right');
-		endif;
-		?>
+				<?php
+				$val = get_the_title();
+				if ($val == "CONTACT US") {
+					$val = "contact";
+				} else if ($val == "LABO MUNICIPAL HYMN") {
+					$val = "hymn";
+				}
 
-	</div><!-- end row -->
-</div><!-- end main -->
+				if ($val !== "contact" && $val !== "hymn" && $val != "MUNICIPAL OFFICIAL AND DEPARTMENT HEAD" && $val != "LEGISLATIVE") {
+					if (is_active_sidebar('left-sidebar')):
+						govph_displayoptions('govph_sidebar_left');
+					endif;
+				}
+				?>
+				<?php
+				if (is_active_sidebar('right-sidebar')):
+					govph_displayoptions('govph_sidebar_right');
+				endif;
+				?>
 
-<?php get_footer(); ?>
+				</div><!-- end row -->
+	</div><!-- end main -->
+
+	<?php get_footer(); ?>

@@ -46,11 +46,11 @@
         <img src="<?php echo get_template_directory_uri() . '/images/economic.png' ?>" style="width:80px;">
         <div class="container d-flex flex-column">
             <p class="text-center" style="font-size: 1.2em; font-weight:bold;">Economic Development</p>
-            <div class=" d-flex justify-content-center align-items-center" style="">
-                <div class="line" style="background-color: #00B518; width:30%; height:4px;"></div>
+            <div class="w-100 d-flex justify-content-center align-items-center" style="">
+                <div class="line" style="background-color: #00B518; width:100%; height:4px;"></div>
             </div>
 
-            <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/economic-development/' ?>" style="background:#00B518; color:white;">View</a>
+            <!-- <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/economic-development/' ?>" style="background:#00B518; color:white;">View</a> -->
 
         </div>
         <div class="overlay">
@@ -67,10 +67,10 @@
         <img src="<?php echo get_template_directory_uri() . '/images/fiscal.png' ?>" style="width:80px;">
         <p class="text-center" style="font-size: 1.5em; font-weight:bold;">Fiscal Management</p>
       
-        <div class=" d-flex justify-content-center align-items-center" style="">
-            <div class="line" style="background-color: #00B518; width:70%; height:4px;"></div>
-        </div>
-        <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/fiscal/' ?>" style="background:#00B518; color:white;">View</a>
+        <div class="w-100 d-flex justify-content-center align-items-center" style="">
+                <div class="line" style="background-color: #00B518; width:100%; height:4px;"></div>
+            </div>
+        <!-- <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/fiscal/' ?>" style="background:#00B518; color:white;">View</a> -->
         <div class="overlay1">
             <p class="text-center p-0 m-0 text-white" style="font-size: 1.2em; font-weight:bold;">Fiscal Management</p>
             <div class=" d-flex justify-content-center align-items-center">
@@ -85,10 +85,10 @@
         <img src="<?php echo get_template_directory_uri() . '/images/infrustructure.png' ?>" style="width:80px;">
         <p class="text-center" style="font-size: 1.5em; font-weight:bold;">Infrastructure</p>
        
-        <div class=" d-flex justify-content-center align-items-center" style="">
-            <div class="line" style="background-color: #00B518; width:70%; height:4px;"></div>
-        </div>
-        <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/infrastructure/' ?>" style="background:#00B518; color:white;">View</a>
+       <div class="w-100 d-flex justify-content-center align-items-center" style="">
+                <div class="line" style="background-color: #00B518; width:100%; height:4px;"></div>
+            </div>
+        <!-- <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/infrastructure/' ?>" style="background:#00B518; color:white;">View</a> -->
     <div class="overlay2">
             <p class="text-center p-0 m-0 text-white" style="font-size: 1.2em; font-weight:bold;">Infrastructure</p>
             <div class=" d-flex justify-content-center align-items-center">
@@ -104,10 +104,10 @@
         <img src="<?php echo get_template_directory_uri() . '/images/publicAdd.png' ?>" style="width:80px;">
         <p class="text-center" style="font-size: 1.5em; font-weight:bold;">Public Administration</p>
       
-        <div class=" d-flex justify-content-center align-items-center" style="">
-            <div class="line" style="background-color: #00B518; width:70%; height:4px;"></div>
-        </div>
-        <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/public-administration/' ?>" style="background:#00B518; color:white;">View</a>
+      <div class="w-100 d-flex justify-content-center align-items-center" style="">
+                <div class="line" style="background-color: #00B518; width:100%; height:4px;"></div>
+            </div>
+        <!-- <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/public-administration/' ?>" style="background:#00B518; color:white;">View</a> -->
     <div class="overlay3">
             <p class="text-center p-0 m-0 text-white" style="font-size: 1.2em; font-weight:bold;">Public Administration</p>
             <div class=" d-flex justify-content-center align-items-center">
@@ -123,10 +123,10 @@
         <img src="<?php echo get_template_directory_uri() . '/images/social.png' ?>" style="width:80px;">
         <p class="text-center" style="font-size: 1.5em; font-weight:bold;">Social Services</p>
        
-        <div class=" d-flex justify-content-center align-items-center" style="">
-            <div class="line" style="background-color: #00B518; width:70%; height:4px;"></div>
-        </div>
-        <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/social-services/' ?>" style="background:#00B518; color:white;">View</a>
+       <div class="w-100 d-flex justify-content-center align-items-center" style="">
+                <div class="line" style="background-color: #00B518; width:100%; height:4px;"></div>
+            </div>
+        <!-- <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/social-services/' ?>" style="background:#00B518; color:white;">View</a> -->
         <div class="overlay4">
             <p class="text-center p-0 m-0 text-white" style="font-size: 1.2em; font-weight:bold;">Social Services</p>
             <div class=" d-flex justify-content-center align-items-center">

@@ -468,7 +468,7 @@ switch ($data) {
 									<?php
 
 								}
-
+								if($dat!="DEPARTMENT AND OFFICES"):
 								if (have_posts()) :
 
 									if ($dat == "MEMORANDUM ORDER" || $dat == "EXECUTIVE ORDER") {
@@ -542,6 +542,7 @@ switch ($data) {
 
 											<?php get_template_part('template-parts/content', get_post_format()); ?>
 										<?php endwhile;
+									
 									} else {  ?>
 										<div class="pt-5 container-fluid">
 											<h2 class="border border-top-0 border-end-0 border-bottom-0 border-2 border-success ps-3 mb-4">Executive Order Archive</h2>
@@ -551,24 +552,27 @@ switch ($data) {
 												// 👇 GET ALL SUBCATEGORIES OF "executive-order" ONLY!
 												$parent_cat = "";
 												$slug = "";
-												if ($dat == "MEMORANDUM ORDER")
-													$slug = "memorandum-order";
-												else
-													$slug = "executive-order";
-
 											
-												$parent_cat = get_category_by_slug($slug);
-												if (!$parent_cat) {
+												if ($dat == "MEMORANDUM ORDER"){
+													$slug = "memorandum-order";
+												}else{
+													$slug = "executive-order";
+												}
+											
+											$parent_cat = get_term_by('slug', $slug, 'category');?>
+											<div class="row mb-3">
+ 
+											<?php	if (!$parent_cat) {
 													echo '<div class="col-12"><p class="text-center text-danger">Parent category "executive-order" not found!</p></div>';
 												} else {
+												
 													$subcategories = get_categories(array(
 														'child_of' => $parent_cat->term_id,
 														'hide_empty' => 0, // Show even if no posts
 														'orderby' => 'name',
 														'order' => 'DESC'
 													));
-
-													if ($subcategories) :
+														if ($subcategories) :
 														foreach ($subcategories as $subcat) :
 												?>
 															<div class="col-md-6 col-lg-4">
@@ -592,8 +596,7 @@ switch ($data) {
 														<div class="col-12">
 															<p class="text-center text-muted">No executive order years available.</p>
 															<!-- DEBUG INFO -->
-															<p class="text-center text-warning">Debug: No subcategories found under <?= $parent_cat->name ?> (ID: <?= $parent_cat->term_id ?>).</p>
-														</div>
+															</div>
 												<?php
 													endif;
 												}
@@ -603,6 +606,7 @@ switch ($data) {
 									<?php } ?>
 
 									<?php gwt_wp_content_nav('nav-below'); ?>
+									<?php endif; ?>
 								<?php else : ?>
 									<?php get_template_part('no-results', 'archive'); ?>
 								<?php endif;

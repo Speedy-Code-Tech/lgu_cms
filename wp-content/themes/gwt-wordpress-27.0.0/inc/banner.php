@@ -212,7 +212,7 @@ if (!is_home()) {
 										
 										if ($dat == "HOME") {
 									
-											echo "<script>location.href = '/lgu_cms';</script>";
+											echo "<script>location.href = '/';</script>";
 										} else if (str_word_count($dat) <= 2) {
 											echo $dat;
 										} else{
