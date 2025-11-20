@@ -41,7 +41,7 @@
         transition: opacity 0.4s ease-in-out, visibility 0s 0s; 
     }
 </style>
-<div class="container-fluid p-5 d-flex  justify-content-center align-items-center flex-row flex-wrap gap-5">
+<div class="container-fluid d-flex  justify-content-center align-items-center flex-row flex-wrap gap-5">
     <div class="dept px-5 pt-0 pb-0 rounded d-flex flex-column justify-content-center align-items-center container-fluid " style="width:250px; height: 300px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <img src="<?php echo get_template_directory_uri() . '/images/economic.png' ?>" style="width:80px;">
         <div class="container d-flex flex-column">
@@ -50,7 +50,7 @@
                 <div class="line" style="background-color: #00B518; width:100%; height:4px;"></div>
             </div>
 
-            <!-- <a class="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/economic-development/' ?>" style="background:#00B518; color:white;">View</a> -->
+            <!-- <a classak="btn form-control" href="<?= WP_HOME . 'index.php/category/about/department-and-offices/economic-development/' ?>" style="background:#00B518; color:white;">View</a> -->
 
         </div>
         <div class="overlay">

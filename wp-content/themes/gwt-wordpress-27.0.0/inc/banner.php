@@ -77,10 +77,83 @@
 		display: none;
 	}
 
+	
+/* --- 1. Define the Fixed Height for the Slide Container --- */
+.orbit-slide {
+    position: relative;
+    overflow: hidden;
+    /* Set a fixed height for all slides */
+    height: 700px; /* <--- CHANGE THIS VALUE to your desired height (e.g., 400px, 60vh, etc.) */
+}
+
+/* --- 2. Style the Blurred Background Image --- */
+.slide-background-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensures it fills the 500px height of the .orbit-slide */
+    z-index: 1;
+}
+
+.slide-background-wrap .orbit-image-bg {
+    width: 100%;
+    height: 100%;
+    /* Stretches the image to cover the container (may crop edges) */
+    object-fit: cover; 
+    
+    filter: blur(10px); 
+    transform: scale(1.05);
+}
+
+/* --- 3. Style the Foreground Image (Picture) --- */
+.slide-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensures content is vertically centered within the slide height */
+    text-align: center;
+}
+
+.slide-content .orbit-image {
+    /* Set max height and max width relative to the slide height */
+    max-height: 100%; /* For example, 90% of the slide's 500px height */
+    max-width: 100%;
+    
+    /* Ensures the image scales down without being cropped or distorted */
+    object-fit: contain; 
+    
+    width: auto; /* Let the width adjust proportionally */
+    height: 700px; /* Let the height adjust proportionally */
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 	@media only screen and (max-width: 600px) {
 		.news {
 			background-size: cover;
 		}
+		.orbit-slide {
+    position: relative;
+    overflow: hidden;
+    /* Set a fixed height for all slides */
+    height: 500px; /* <--- CHANGE THIS VALUE to your desired height (e.g., 400px, 60vh, etc.) */
+}
+.slide-content .orbit-image {
+    /* Set max height and max width relative to the slide height */
+    max-height: 100%; /* For example, 90% of the slide's 500px height */
+    max-width: 100%;
+    
+    /* Ensures the image scales down without being cropped or distorted */
+    object-fit: contain; 
+    
+    width: auto; /* Let the width adjust proportionally */
+    height: 400px; /* Let the height adjust proportionally */
+    
+   
 	}
 
 	@media only screen and (min-width: 600px) {
@@ -97,6 +170,7 @@
 			background-position-y: -15px;
 		}
 	}
+
 </style>
 
 <?php
@@ -118,13 +192,15 @@ if (is_home()) {
 		$banner_class = 'large-8 columns';
 		$banner_3_class = 'large-4 columns';
 	}
-	$banner_class .= ' hide-for-small-only';
+	$banner_class .= ' ';
 }
 
 $container_class = '';
 if (!is_home()) {
 	$container_class = 'banner-pads';
 }
+$first_link = efs_get_first_slide_link();
+echo $first_link;
 ?>
 
 <!-- banner -->

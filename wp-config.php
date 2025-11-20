@@ -3,8 +3,8 @@
  if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
     $_SERVER['HTTPS']='on';
 
-define( 'WP_HOME', 'https://jestersalen.site/' );
-define( 'WP_SITEURL', 'https://jestersalen.site/' );
+define( 'WP_HOME', 'https://labocamnorte.site/' );
+define( 'WP_SITEURL', 'https://labocamnorte.site/' );
 define( 'WP_INDEX', '/' );
 /**
  * The base configuration for WordPress

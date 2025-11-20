@@ -26,6 +26,33 @@ include_once('inc/banner.php');
 		margin-bottom: 20px;
 		font-size: 18px;
 	}
+	.greens{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    background-color: #00B518;
+    position: absolute;
+    top: 0; left: 0;               /* cover the card */
+    opacity: 0;                    /* invisible */
+    visibility: hidden;            /* not in tab order */
+    cursor: pointer;
+    transition: opacity 0.55s ease, visibility 0.55s ease;   /* <-- transition here */
+    display: flex;                 /* keep flex so children layout correctly */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+}
+
+/* 2. Show it on hover */
+.t1:hover .target1,
+.t2:hover .target2,
+.t3:hover .target3{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.55s ease, visibility 0s 0s;   /* instant visibility after opacity */
+}
 </style>
 <?php govph_displayoptions('govph_panel_top'); ?>
 
@@ -84,45 +111,47 @@ include_once('inc/banner.php');
 					if ($disclosure_posts->have_posts()) :
 						while ($disclosure_posts->have_posts()) : $disclosure_posts->the_post();
 					?>
-					<style>
-						#disclosure_<?php echo get_the_ID();?>{
-							background-color: white;
-							transition: 0.2s;
-						}
-						.link1{
-							color: black;
-							transition: 1.5s;
-							background: transparent;
-						}
-						#disclosure_<?php echo get_the_ID();?>:hover,#disclosure_<?php echo get_the_ID();?>:hover div h5 .link1{
-							/* background-color: #00B518; */
-							color: #00B518;
-						}
-						
-					</style>
-							<div class="col-md-6 col-lg-4">
-									<div id="disclosure_<?= get_the_ID();;?>"  class=" card h-100 shadow-sm border-0 boxs rounded-4 overflow-hidden">
-										<?php if (has_post_thumbnail()) : ?>
-											<img src="<?php the_post_thumbnail_url('medium'); ?>"
-												class="card-img-top"
-												alt="<?php the_title(); ?>"
-												style="height: 200px; object-fit: cover;">
-										<?php endif; ?>
+							<style>
+								#disclosure_<?php echo get_the_ID(); ?> {
+									background-color: white;
+									transition: 0.2s;
+								}
 
-										<div class="card-body d-flex flex-column p-4">
-											<h5 class="card-title fw-bold  mb-2">
-												<a href="<?php the_permalink(); ?>" class="text-decoration-none link1"><?php the_title(); ?></a>
-											</h5>
-											<a href="<?php the_permalink(); ?>" class="card-text  flex-grow-1" style="font-size: 14px;">
-												<?php echo wp_trim_words(get_the_excerpt(), 15); ?>
-											</a>
-											<div class="d-flex justify-content-between align-items-end mt-auto">
-												<small class="text-muted">Date Posted: <?php echo get_the_date('M j, Y'); ?></small>
-												<!-- <a href="<?php the_permalink(); ?>" class="btn btn-outline-success btn-sm">Read More</a> -->
-											</div>
+								.link1 {
+									color: black;
+									transition: 1.5s;
+									background: transparent;
+								}
+
+								#disclosure_<?php echo get_the_ID(); ?>:hover,
+								#disclosure_<?php echo get_the_ID(); ?>:hover div h5 .link1 {
+									/* background-color: #00B518; */
+									color: #00B518;
+								}
+							</style>
+							<div class="col-md-6 col-lg-4">
+								<div id="disclosure_<?= get_the_ID();; ?>" class=" card h-100 shadow-sm border-0 boxs rounded-4 overflow-hidden">
+									<?php if (has_post_thumbnail()) : ?>
+										<img src="<?php the_post_thumbnail_url('medium'); ?>"
+											class="card-img-top"
+											alt="<?php the_title(); ?>"
+											style="height: 200px; object-fit: cover;">
+									<?php endif; ?>
+
+									<div class="card-body d-flex flex-column p-4">
+										<h5 class="card-title fw-bold  mb-2">
+											<a href="<?php the_permalink(); ?>" class="text-decoration-none link1"><?php the_title(); ?></a>
+										</h5>
+										<a href="<?php the_permalink(); ?>" class="card-text  flex-grow-1" style="font-size: 14px;">
+											<?php echo wp_trim_words(get_the_excerpt(), 15); ?>
+										</a>
+										<div class="d-flex justify-content-between align-items-end mt-auto">
+											<small class="text-muted">Date Posted: <?php echo get_the_date('M j, Y'); ?></small>
+											<!-- <a href="<?php the_permalink(); ?>" class="btn btn-outline-success btn-sm">Read More</a> -->
 										</div>
 									</div>
-							
+								</div>
+
 							</div>
 						<?php
 						endwhile;
@@ -139,7 +168,7 @@ include_once('inc/banner.php');
 				</div>
 			</div>
 			<!-- END OF BLOCK -->
-<!-- ADD THIS ENTIRE BLOCK HERE -->
+			<!-- ADD THIS ENTIRE BLOCK HERE -->
 			<div class="pt-5 container-fluid">
 				<h2 class="border border-top-0 border-end-0 border-bottom-0 border-2 border-success ps-3 mb-4">Transparency</h2>
 
@@ -155,45 +184,47 @@ include_once('inc/banner.php');
 					if ($disclosure_posts->have_posts()) :
 						while ($disclosure_posts->have_posts()) : $disclosure_posts->the_post();
 					?>
-								<style>
-						#transparency_<?php echo get_the_ID();?>{
-							background-color: white;
-							transition: 0.2s;
-						}
-						.link1{
-							color: black;
-							transition: 1.5s;
-							background: transparent;
-						}
-						#transparency_<?php echo get_the_ID();?>:hover,#transparency_<?php echo get_the_ID();?>:hover div h5 .link1{
-							/* background-color: #00B518; */
-							color: #00B518;
-						}
-						
-					</style>
+							<style>
+								#transparency_<?php echo get_the_ID(); ?> {
+									background-color: white;
+									transition: 0.2s;
+								}
+
+								.link1 {
+									color: black;
+									transition: 1.5s;
+									background: transparent;
+								}
+
+								#transparency_<?php echo get_the_ID(); ?>:hover,
+								#transparency_<?php echo get_the_ID(); ?>:hover div h5 .link1 {
+									/* background-color: #00B518; */
+									color: #00B518;
+								}
+							</style>
 							<div class="col-md-6 col-lg-4">
-									<div id="transparency_<?php echo get_the_ID();?>" class=" card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
-										<?php if (has_post_thumbnail()) : ?>
-											<!-- <img src="<?php the_post_thumbnail_url('medium'); ?>"
+								<div id="transparency_<?php echo get_the_ID(); ?>" class=" card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+									<?php if (has_post_thumbnail()) : ?>
+										<!-- <img src="<?php the_post_thumbnail_url('medium'); ?>"
 												class="card-img-top"
 												alt="<?php the_title(); ?>"
 												style="height: 200px; object-fit: cover;"> -->
-										<?php endif; ?>
+									<?php endif; ?>
 
-										<div class="card-body d-flex flex-column p-4">
-											<h5 class="card-title fw-bold text-dark mb-2">
-												<a href="<?php the_permalink(); ?>" class="text-decoration-none link1"><?php the_title(); ?></a>
-											</h5>
-											<a href="<?php the_permalink(); ?>" class="card-text text-secondary flex-grow-1" style="font-size: 14px;">
-												
-											</a>
-											<div class="d-flex justify-content-between align-items-end mt-auto">
-												<small class="text-muted">Date Posted: <?php echo get_the_date('M j, Y'); ?></small>
-												<!-- <a href="<?php the_permalink(); ?>" class="btn btn-outline-success btn-sm">Read More</a> -->
-											</div>
+									<div class="card-body d-flex flex-column p-4">
+										<h5 class="card-title fw-bold text-dark mb-2">
+											<a href="<?php the_permalink(); ?>" class="text-decoration-none link1"><?php the_title(); ?></a>
+										</h5>
+										<a href="<?php the_permalink(); ?>" class="card-text text-secondary flex-grow-1" style="font-size: 14px;">
+
+										</a>
+										<div class="d-flex justify-content-between align-items-end mt-auto">
+											<small class="text-muted">Date Posted: <?php echo get_the_date('M j, Y'); ?></small>
+											<!-- <a href="<?php the_permalink(); ?>" class="btn btn-outline-success btn-sm">Read More</a> -->
 										</div>
 									</div>
-							
+								</div>
+
 							</div>
 						<?php
 						endwhile;
@@ -202,6 +233,77 @@ include_once('inc/banner.php');
 						?>
 						<div class="col-12">
 							<p class="text-center text-muted">No Transparency posts found.</p>
+						</div>
+					<?php endif; ?>
+				</div>
+				<div class="container-fluid text-center">
+					<div class="mx-5 mt-3" style="width: 90%; height:2px; background: #00B518; border-radius: 20px;"></div>
+				</div>
+			</div>
+			<div class="pt-5 container-fluid">
+				<h2 class="border border-top-0 border-end-0 border-bottom-0 border-2 border-success ps-3 mb-4">Bids & Awards</h2>
+
+				<div class="row g-4">
+					<?php
+					// QUERY FOR DISCLOSURE CATEGORY POSTS
+					$disclosure_posts = new WP_Query(array(
+						'category_name' => 'bids-and-awards',  // Your slug
+						'posts_per_page' => 3,           // Show 6 posts
+						'post_status' => 'publish'
+					));
+
+					if ($disclosure_posts->have_posts()) :
+						while ($disclosure_posts->have_posts()) : $disclosure_posts->the_post();
+					?>
+							<style>
+								#bids_<?php echo get_the_ID(); ?> {
+									background-color: white;
+									transition: 0.2s;
+								}
+
+								.link1 {
+									color: black;
+									transition: 1.5s;
+									background: transparent;
+								}
+
+								#bids_<?php echo get_the_ID(); ?>:hover,
+								#bids_<?php echo get_the_ID(); ?>:hover div h5 .link1 {
+									/* background-color: #00B518; */
+									color: #00B518;
+								}
+							</style>
+							<div class="col-md-6 col-lg-4">
+								<div id="bids_<?php echo get_the_ID(); ?>" class=" card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+									<?php if (has_post_thumbnail()) : ?>
+										<!-- <img src="<?php the_post_thumbnail_url('medium'); ?>"
+												class="card-img-top"
+												alt="<?php the_title(); ?>"
+												style="height: 200px; object-fit: cover;"> -->
+									<?php endif; ?>
+
+									<div class="card-body d-flex flex-column p-4">
+										<h5 class="card-title fw-bold text-dark mb-2">
+											<a href="<?php the_permalink(); ?>" class="text-decoration-none link1"><?php the_title(); ?></a>
+										</h5>
+										<a href="<?php the_permalink(); ?>" class="card-text text-secondary flex-grow-1" style="font-size: 14px;">
+
+										</a>
+										<div class="d-flex justify-content-between align-items-end mt-auto">
+											<small class="text-muted">Date Posted: <?php echo get_the_date('M j, Y'); ?></small>
+											<!-- <a href="<?php the_permalink(); ?>" class="btn btn-outline-success btn-sm">Read More</a> -->
+										</div>
+									</div>
+								</div>
+
+							</div>
+						<?php
+						endwhile;
+						wp_reset_postdata();
+					else :
+						?>
+						<div class="col-12">
+							<p class="text-center text-muted">No Bids and Awards posts found.</p>
 						</div>
 					<?php endif; ?>
 				</div>
@@ -226,28 +328,28 @@ include_once('inc/banner.php');
 						while ($disclosure_posts->have_posts()) : $disclosure_posts->the_post();
 					?>
 							<div class="col-md-6 col-lg-4">
-									<div class="card h-100 shadow-sm border-0 bg-white rounded-4 overflow-hidden">
-										<?php if (has_post_thumbnail()) : ?>
-											<img src="<?php the_post_thumbnail_url('medium'); ?>"
-												class="card-img-top"
-												alt="<?php the_title(); ?>"
-												style="height: 200px; object-fit: cover;">
-										<?php endif; ?>
+								<div class="card h-100 shadow-sm border-0 bg-white rounded-4 overflow-hidden">
+									<?php if (has_post_thumbnail()) : ?>
+										<img src="<?php the_post_thumbnail_url('medium'); ?>"
+											class="card-img-top"
+											alt="<?php the_title(); ?>"
+											style="height: 200px; object-fit: cover;">
+									<?php endif; ?>
 
-										<div class="card-body d-flex flex-column p-4">
-											<h5 class="card-title fw-bold text-dark mb-2">
-												<a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark"><?php the_title(); ?></a>
-											</h5>
-											<a href="<?php the_permalink(); ?>" class="card-text text-secondary flex-grow-1" style="font-size: 14px;">
-												<?php echo wp_trim_words(get_the_excerpt(), 15); ?>
-											</a>
-											<div class="d-flex justify-content-between align-items-end mt-auto">
-												<small class="text-muted">Date Posted: <?php echo get_the_date('M j, Y'); ?></small>
-												<!-- <a href="<?php the_permalink(); ?>" class="btn btn-outline-success btn-sm">Read More</a> -->
-											</div>
+									<div class="card-body d-flex flex-column p-4">
+										<h5 class="card-title fw-bold text-dark mb-2">
+											<a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark"><?php the_title(); ?></a>
+										</h5>
+										<a href="<?php the_permalink(); ?>" class="card-text text-secondary flex-grow-1" style="font-size: 14px;">
+											<?php echo wp_trim_words(get_the_excerpt(), 15); ?>
+										</a>
+										<div class="d-flex justify-content-between align-items-end mt-auto">
+											<small class="text-muted">Date Posted: <?php echo get_the_date('M j, Y'); ?></small>
+											<!-- <a href="<?php the_permalink(); ?>" class="btn btn-outline-success btn-sm">Read More</a> -->
 										</div>
 									</div>
-							
+								</div>
+
 							</div>
 						<?php
 						endwhile;
@@ -282,28 +384,28 @@ include_once('inc/banner.php');
 						while ($disclosure_posts->have_posts()) : $disclosure_posts->the_post();
 					?>
 							<div class="col-md-6 col-lg-4">
-									<div class="card h-100 shadow-sm border-0 bg-white rounded-4 overflow-hidden">
-										<?php if (has_post_thumbnail()) : ?>
-											<img src="<?php the_post_thumbnail_url('medium'); ?>"
-												class="card-img-top"
-												alt="<?php the_title(); ?>"
-												style="height: 200px; object-fit: cover;">
-										<?php endif; ?>
+								<div class="card h-100 shadow-sm border-0 bg-white rounded-4 overflow-hidden">
+									<?php if (has_post_thumbnail()) : ?>
+										<img src="<?php the_post_thumbnail_url('medium'); ?>"
+											class="card-img-top"
+											alt="<?php the_title(); ?>"
+											style="height: 200px; object-fit: cover;">
+									<?php endif; ?>
 
-										<div class="card-body d-flex flex-column p-4">
-											<h5 class="card-title fw-bold text-dark mb-2">
-												<a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark"><?php the_title(); ?></a>
-											</h5>
-											<a href="<?php the_permalink(); ?>" class="card-text text-secondary flex-grow-1" style="font-size: 14px;">
-												<?php echo wp_trim_words(get_the_excerpt(), 15); ?>
-											</a>
-											<div class="d-flex justify-content-between align-items-end mt-auto">
-												<small class="text-muted">Date Posted: <?php echo get_the_date('M j, Y'); ?></small>
-												<!-- <a href="<?php the_permalink(); ?>" class="btn btn-outline-success btn-sm">Read More</a> -->
-											</div>
+									<div class="card-body d-flex flex-column p-4">
+										<h5 class="card-title fw-bold text-dark mb-2">
+											<a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark"><?php the_title(); ?></a>
+										</h5>
+										<a href="<?php the_permalink(); ?>" class="card-text text-secondary flex-grow-1" style="font-size: 14px;">
+											<?php echo wp_trim_words(get_the_excerpt(), 15); ?>
+										</a>
+										<div class="d-flex justify-content-between align-items-end mt-auto">
+											<small class="text-muted">Date Posted: <?php echo get_the_date('M j, Y'); ?></small>
+											<!-- <a href="<?php the_permalink(); ?>" class="btn btn-outline-success btn-sm">Read More</a> -->
 										</div>
 									</div>
-							
+								</div>
+
 							</div>
 						<?php
 						endwhile;
@@ -320,6 +422,38 @@ include_once('inc/banner.php');
 				</div>
 			</div>
 			<!-- END OF BLOCK -->
+			<div class="pt-5 container-fluid">
+				<h2 class="border border-top-0 border-end-0 border-bottom-0 border-2 border-success ps-3 mb-4">QUICK LINKS</h2>
+
+				<div class="row gap-4 d-flex  justify-content-center align-items-center">
+					<div style="height: 200px;" class="t1 quick-links d-flex gap-4 justify-content-center align-items-center p-3 card col-3 bg-white shadow rounded">
+						<img style="width:50px; height:50px;" src="<?= get_template_directory_uri() . '/images/star.png' ?>" />
+						<h2 class="text-center" style="color:#00B518;">BPLO PAGE</h2>
+						<div class="target1 greens p-3 gap-3 text-white  flex-column justify-content-center align-items-center">
+							<h4>Access the Business Permits and Licenses Office (BPLO)</h4>
+							<a target="_blank" href="https://prod.ebpls.com/labocamarinesnorte/" class="btn btn-outline-light form-control">VIEW HERE</a>
+						</div>
+					</div>
+					<div style="height: 200px;" class="t2 quick-links d-flex gap-4 justify-content-center align-items-center p-3 card col-3 bg-white shadow rounded">
+						<img style="width:50px; height:50px;" src="<?= get_template_directory_uri() . '/images/bulb.png' ?>" />
+
+						<h2 class="text-center" style="color:#00B518;">PROCUREMENT</h2>
+						<div class="target2 greens p-3 gap-3 text-white  flex-column justify-content-center align-items-center">
+							<h4>Access the BIDS AND AWARDS COMMITTEE</h4>
+							<a target="_blank" href="<?= WP_HOME.'index.php/category/bids-and-awards'?>" class="btn btn-outline-light form-control">KNOW MORE</a>
+						</div>
+					</div>
+					<div style="height: 200px;" class="t3 quick-links d-flex gap-4 justify-content-center align-items-center p-3 card col-3 bg-white shadow rounded">
+						<img style="width:50px; height:50px;" src="<?= get_template_directory_uri() . '/images/building.png' ?>" />
+
+						<h2 class="text-center" style="color:#00B518;">DEPARTMENT AND OFFICES</h2>
+							<div class="target3 greens p-3 gap-3 text-white  flex-column justify-content-center align-items-center">
+							<h4>Access all the Departments and Offices of Labo</h4>
+							<a target="_blank" href="<?php echo WP_HOME.'index.php/category/about/department-and-offices/'?>" class="btn btn-outline-light form-control">VIEW HERE</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div><!-- end content -->
 
 		<?php

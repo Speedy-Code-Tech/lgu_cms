@@ -417,7 +417,10 @@ switch ($data) {
 		?>
 			<style>
 				.post-box.container-fluid {
-					width: 300px;
+					width: 80%;
+				}
+				.wp-block-list>li{
+					padding-bottom: 10px;
 				}
 			</style>
 		<?php
@@ -438,10 +441,9 @@ switch ($data) {
 							if (strtolower($target) == strtolower($target_no_punc)): ?>
 								<!-- DISPLAY CITIZENZ CHARTER INFO -->
 								<?php require(get_template_directory() . "/template-parts/custom/citizens-banner.php"); ?>
-								<div id="content" class="d-flex flex-wrap gap-3 justify-content-center align-items-center" role="main">
+								<div id="content" class="d-flex flex-column gap-3 justify-content-center align-items-center" role="main">
 								<?php else: ?>
 									<div id="content" role="main">
-
 									<?php endif; ?>
 
 								<?php endif; ?>

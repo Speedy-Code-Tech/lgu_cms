@@ -1,80 +1,80 @@
-	<?php 
+	<?php
 	$barangay1 = [
-				"anahaw",
-				"anameam",
-				"awitan",
-				"baay",
-				"bagacay",
-				"bagong silang i",
-				"bagong silang ii",
-				"bagong silang iii",
-				"bakiad",
-				"bautista",
-				"bayabas",
-				"bayan-bayan",
-				"benit",
-				"bulhao",
-				"cabatuhan",
-				"cabusay",
-				"calabasa",
-				"canapawan",
-				"daguit",
-				"dalas",
-				"dumagmang",
-				"exciban",
-				"fundado",
-				"guinacutan",
-				"guisican",
-				"gumamela",
-				"iberica",
-				"kalamunding",
-				"lugui",
-				"mabilo i",
-				"mabilo ii",
-				"macogon",
-				"mahawan-hawan",
-				"malangcao-basud",
-				"malasugui",
-				"malatap",
-				"malaya",
-				"malibago",
-				"maot",
-				"masalong",
-				"matanlang",
-				"napaod",
-				"pag-asa",
-				"pangpang",
-				"pinya",
-				"san antonio",
-				"san francisco",
-				"santa cruz",
-				"submakin",
-				"talobatib",
-				"tigbinan",
-				"tulay na lupa"
-			];
-	
-			
-	?>	
+		"anahaw",
+		"anameam",
+		"awitan",
+		"baay",
+		"bagacay",
+		"bagong silang i",
+		"bagong silang ii",
+		"bagong silang iii",
+		"bakiad",
+		"bautista",
+		"bayabas",
+		"bayan-bayan",
+		"benit",
+		"bulhao",
+		"cabatuhan",
+		"cabusay",
+		"calabasa",
+		"canapawan",
+		"daguit",
+		"dalas",
+		"dumagmang",
+		"exciban",
+		"fundado",
+		"guinacutan",
+		"guisican",
+		"gumamela",
+		"iberica",
+		"kalamunding",
+		"lugui",
+		"mabilo i",
+		"mabilo ii",
+		"macogon",
+		"mahawan-hawan",
+		"malangcao-basud",
+		"malasugui",
+		"malatap",
+		"malaya",
+		"malibago",
+		"maot",
+		"masalong",
+		"matanlang",
+		"napaod",
+		"pag-asa",
+		"pangpang",
+		"pinya",
+		"san antonio",
+		"san francisco",
+		"santa cruz",
+		"submakin",
+		"talobatib",
+		"tigbinan",
+		"tulay na lupa"
+	];
 
+
+	?>
 	<?php if (in_array(trim(strtolower(get_the_title())), $barangay1, true)): ?>
 		<div class="container-fluid d-flex flex-column flex-sm-row-reverse gap-3">
-			<div class="col12 col-sm-4">
-				<?php
-				if (has_post_thumbnail()) :
+			<?php
+			if (has_post_thumbnail()) : ?>
+				<div class="col-12 col-sm-4">
+					<?php
 					$content_class = 'large-12';
 					the_post_thumbnail('thumbnail', ['class' => 'w-100 rounded']);
-				endif;
-				?>
-			</div>
-			<div class="col-12 col-sm-6">
+
+					?>
+				</div>
+			<?php endif; ?>
+			<div class="col-12 col-sm-12">
 				<?php
 				get_template_part('template-parts/content', 'single');
 				?>
 			</div>
 		</div>
-		<hr>
-		</hr>
+		<hr />
 		<h2 class="pb-0 mb-2" style="color:#00B518;">Available Tourist Spots and Activity</h2>
 		<div style="width: 350px; background:#007bff;  height:4px; border-radius: 30px;"></div>
 	<?php endif; ?>

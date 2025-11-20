@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="post-box container-fluid">
+<div class="post-box container-fluid ">
 	<?php
 	$val = 0;
 	$dat = single_cat_title('', false);
@@ -63,7 +63,6 @@
 	$target_no_punc = preg_replace('/[[:punct:]]/u', '', "CITIZEN's CHARTER");
 	$target = str_replace("8217", "", $dat_no_punc);
 
-
 	?>
 	<?php if ($val == 1 && $title == "ACCOMODATIONS"):
 		require(get_template_directory() . '/template-parts/custom/accommodation.php');
@@ -82,19 +81,20 @@
 			require(get_template_directory() . '/template-parts/custom/memorandum.php');
 		?>
 
-		<?php elseif (strtolower($target) == strtolower($target_no_punc)):
+		<?php elseif (strtolower($target) == strtolower($target_no_punc)): //CITIZENS CHARTER ONLY!
+			
 			require(get_template_directory() . '/template-parts/custom/charter.php');
 		?>
-		<?php elseif ($data == "DOWNLOADABLE FORMS"): ?>
+		<?php elseif ($data == "DOWNLOADABLE FORMS"): ?> <!--  DOWNLOADABLE FORMS ONLY -->
 			
 			<?php
 		
 			require(get_template_directory() . '/template-parts/custom/downloadable_forms.php');
 			?>
 
-		<?php elseif ($data == "FACTS AND FIGURES"): ?>
+		<?php elseif ($data == "FACTS AND FIGURES"): ?> 
 			
-			<?php else:
+		<?php else:
 			$isBrgy = 0;
 		$barangay1 = [
 				"anahaw",

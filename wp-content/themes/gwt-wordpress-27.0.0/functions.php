@@ -9,6 +9,7 @@
 /**
  * Template Initialize
  */
+
 require get_template_directory() . '/inc/function-initialize.php';
 
 /**
@@ -162,4 +163,5 @@ function custom_dynamic_category_sort( $query ) {
         $query->set( 'orderby', 'date' );
     }
 }
+
 add_action( 'pre_get_posts', 'custom_dynamic_category_sort' );

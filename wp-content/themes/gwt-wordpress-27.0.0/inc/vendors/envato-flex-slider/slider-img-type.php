@@ -105,7 +105,7 @@ function slider_link_get_meta_box_data($post_id){
     // @todo: format the url into proper url
     $slider_link = get_post_meta($post_id, '_slider_link', true);
     if($slider_link == ''){
-        return '#';
+        return '';
     }
 
     if(str_starts_with($slider_link, 'http://') || str_starts_with($slider_link, 'https://')){

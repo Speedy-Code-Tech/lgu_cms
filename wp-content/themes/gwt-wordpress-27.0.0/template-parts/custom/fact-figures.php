@@ -18,8 +18,9 @@
 					</div>
 					<!-- Historical Text Content -->
 					<div class="text-body lh-lg col-12 col-md-8 ps-3 pe-3">
-						<p class="fs-10 p-0 m-0" style="text-align: justify;">
+						<p class="fs-10 p-0 m-0" style="text-align: justify; line-height: 40px;">
 							The Municipality of Labo, officially founded on September 8, 1800, is a pivotal historical and economic hub within Camarines Norte. Its history began during the Spanish colonial era and the town was recognized as a foundational municipality when the province was established in 1829. Labo holds significance in the nation's revolutionary history as the birthplace of <span class="fw-bolder" style="color:#00B518;">General Vicente R. Lukban</span>, a revered figure of the Philippine-American War. Economically, the town is defined by its abundant natural resources: its mountainous terrain contains reserves of <span class="fw-semibold text-warning">gold and other minerals</span>, while its fertile land sustains a robust agricultural sector specializing in coconut, rice, and the high-quality <span class="fw-semibold text-success">queen pineapple</span>. Labo’s enduring legacy is that of a resilient community enriched by both its historical struggles and its natural wealth.
+
 						</p>
 					</div>
 
@@ -147,16 +148,13 @@
 						<li>
 							<a class="links" href="<?php echo WP_HOME; ?>index.php/category/barangay/calabasa" style="text-transform: uppercase; text-decoration: none;">Calabasa</a>
 						</li>
+						<li>
+							<a class="links" href="<?php echo WP_HOME; ?>index.php/category/barangay/canapawan" style="text-transform: uppercase; text-decoration: none;">Canapawan</a>
+						</li>
 					</ul>
 				</div>
 				<div class="col-12 col-md-4 ps-3 " style="border-right:2px solid #00B518;">
 					<ul class="d-flex flex-column gap-2">
-						<li>
-							<a class="links" href="<?php echo WP_HOME; ?>index.php/category/barangay/calabasa" style="text-transform: uppercase; text-decoration: none;">Calabasa</a>
-						</li>
-						<li>
-							<a class="links" href="<?php echo WP_HOME; ?>index.php/category/barangay/canapawan" style="text-transform: uppercase; text-decoration: none;">Canapawan</a>
-						</li>
 						<li>
 							<a class="links" href="<?php echo WP_HOME; ?>index.php/category/barangay/daguit" style="text-transform: uppercase; text-decoration: none;">Daguit</a>
 						</li>
@@ -205,16 +203,18 @@
 						<li>
 							<a class="links" href="<?php echo WP_HOME; ?>index.php/category/barangay/malangcao-basud" style="text-transform: uppercase; text-decoration: none;">Malangcao-Basud</a>
 						</li>
-					</ul>
-				</div>
-				<div class="col-12 col-md-4 ps-3 " style="border-right:2px solid #00B518;">
-					<ul class="d-flex flex-column gap-2">
 						<li>
 							<a class="links" href="<?php echo WP_HOME; ?>index.php/category/barangay/malasugui" style="text-transform: uppercase; text-decoration: none;">Malasugui</a>
 						</li>
 						<li>
 							<a class="links" href="<?php echo WP_HOME; ?>index.php/category/barangay/malatap" style="text-transform: uppercase; text-decoration: none;">Malatap</a>
 						</li>
+					</ul>
+				</div>
+				<div class="col-12 col-md-4 ps-3 " style="border-right:2px solid #00B518;">
+					<ul class="d-flex flex-column gap-2">
+						
+						
 						<li>
 							<a class="links" href="<?php echo WP_HOME; ?>index.php/category/barangay/malaya" style="text-transform: uppercase; text-decoration: none;">Malaya</a>
 						</li>
